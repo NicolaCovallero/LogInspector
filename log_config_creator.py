@@ -1,4 +1,5 @@
 
+import traceback
 from PyQt5 import  QtWidgets
 from PyQt5 import QtGui
 from PyQt5.QtWidgets import QFileDialog 
@@ -137,17 +138,26 @@ class MainWindowModel(Ui_MainWindow):
 
         if dlg.exec_():
             filenames = dlg.selectedFiles()
-            f = open(filenames[0], 'r')
-            
-            with f:
-                data = f.read()
-                self.update_text_view(data)
-                self.global_input_text = data
-                self.plainTextGlobalInput.setPlainText(data)
-                self.pushButtonAdd.setEnabled(True)
-            self.comboBoxOperations.setEnabled(True)
-            self.operation_changed(self.comboBoxOperations.currentText()) 
-            self.update_displayed_parsed()
+            f = open(filenames[0], 'r', encoding="utf8")
+            try:
+                with f:                
+                    data = f.read()
+                    self.update_text_view(data)
+                    self.global_input_text = data
+                    self.plainTextGlobalInput.setPlainText(data)
+                    self.pushButtonAdd.setEnabled(True)
+                self.comboBoxOperations.setEnabled(True)
+                self.operation_changed(self.comboBoxOperations.currentText()) 
+                self.update_displayed_parsed()
+            except:
+                self.log.error(traceback.print_exc())
+                msg = QMessageBox()
+                msg.setText("Error opening file {}.".format(filenames[0]))
+                msg.setWindowTitle( "Error")
+                msg.setIcon(QMessageBox.Warning)
+                msg.setStandardButtons(QMessageBox.Ok) 
+                msg.show()
+                msg.exec_()
 
     def update_text_view(self, input_text:str):
         self.plainTextOperatorInput.setPlainText(input_text)
@@ -182,11 +192,22 @@ class MainWindowModel(Ui_MainWindow):
             return None
 
     def apply_operator(self, op:Operator):
-        parsed_text = op.apply(self.plainTextOperatorInput.toPlainText())
-        if parsed_text:
-            self.plainTextOutput.setPlainText(parsed_text)
-        else:
-            self.plainTextOutput.clear()
+        try:
+            self.textPatternFind.setStyleSheet('color: white;')
+            self.textPatternFind.setAutoFillBackground(False)
+            parsed_text = op.apply(self.plainTextOperatorInput.toPlainText())
+            self.pushButtonAdd.setEnabled(True)
+            if parsed_text:
+                self.plainTextOutput.setPlainText(parsed_text)
+            else:
+                self.plainTextOutput.clear()            
+        except:
+            self.log.error("Impossible parsing with regular expression {}".format(self.plainTextOperatorInput.toPlainText()))
+            self.textPatternFind.setAutoFillBackground(True)            
+            palette = QtGui.QPalette()
+            palette.setColor(QtGui.QPalette.Text, QtCore.Qt.red)
+            self.textPatternFind.setStyleSheet('color: red;')
+            self.pushButtonAdd.setEnabled(False)
 
     def get_current_input_output_text(self):
         return self.plainTextOperatorInput.toPlainText(), self.plainTextOutput.toPlainText()
@@ -241,6 +262,7 @@ class MainWindowModel(Ui_MainWindow):
                     self.textPatternFind.clear()
                     self.lineEditHeader.setText(config["header"])
             except Exception as e:
+                self.log.error(traceback.print_exc())
                 self.log.error("Error parsing the configuration file")
                 ok = False
 
