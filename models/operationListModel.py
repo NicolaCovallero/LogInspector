@@ -31,7 +31,7 @@ class OperationListModel(QAbstractListModel):
     def delete(self, index:int):
         # To notify that the data changes we have to call beginInsertRows and endInsertRows
         self.beginInsertRows(QModelIndex(), self.rowCount(), self.rowCount())
-        if len(self.items) > 0:
+        if index in range(len(self.items)):
             self.items.pop(index)
         self.endInsertRows()
         pass
