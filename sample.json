@@ -1,0 +1,24 @@
+{
+    "ops": [
+        {
+            "type": "FIND",
+            "pattern": ".*received.*|.*Robot error.*"
+        },
+        {
+            "type": "REPLACE",
+            "pattern": ".*\\[.*\\] .*x: |\u240d\u240a",
+            "replace": ""
+        },
+        {
+            "type": "REPLACE",
+            "pattern": "m, y:| y:",
+            "replace": ","
+        },
+        {
+            "type": "REPLACE",
+            "pattern": "m.",
+            "replace": ""
+        }
+    ],
+    "header": "x, y"
+}

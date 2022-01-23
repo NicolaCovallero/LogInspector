@@ -1,4 +1,5 @@
 import json
+import traceback
 from models.operators import *
 import logging 
 
@@ -37,6 +38,7 @@ class ConfigurationJson():
             ok = True    
         except Exception as e:
             log = logging.getLogger()
+            log.error(traceback.print_exc())
             log.error("Error parsing the configuration file")
             ok = False
         return c, ok

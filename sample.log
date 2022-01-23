@@ -1,0 +1,8 @@
+[09:05:12.170][.lte_mqtt.cpp:1004] INFO: received from MQTT topic, new target x: 1.8m, y: 2.95m.␍␊
+[09:05:12.950][controller.cpp:441] INFO: Robot errors x: 0.15 y: 0.2␍␊
+[09:05:12.170][.lte_mqtt.cpp:1004] INFO: received from MQTT topic, new target x: 2.0m, y: 3.0m.␍␊
+[09:05:12.950][controller.cpp:441] INFO: Robot errors x: 0.35 y: 0.25␍␊
+[09:05:12.290][perception_module.cpp:120] DEBUG: Path is cleared, robot can go on␍␊
+[09:05:12.950][controller.cpp:441] INFO: Robot errors x: 0.20 y: 0.22␍␊
+[09:05:12.950][controller.cpp:441] INFO: Robot errors x: 0.15 y: 0.23␍␊
+[09:05:12.950][controller.cpp:441] INFO: Robot errors x: 0.12 y: 0.18␍␊
