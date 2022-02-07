@@ -34,7 +34,7 @@ class MainWindowModel(Ui_MainWindow):
         self.listView.clicked.connect(self.display_sequenced_operation)
         self.pushButtonNewOperation.clicked.connect(self.new_operation)
         self.init_combobox_ops()
-        self.list_model = OperationListModel()        
+        self.list_model = OperationListModel()    
 
     def display_sequenced_operation(self):
         ids = self.listView.selectedIndexes()
