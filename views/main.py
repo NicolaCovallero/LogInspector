@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'main.ui'
+# Form implementation generated from reading ui file '.\views\main.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -14,14 +14,14 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(921, 937)
+        MainWindow.resize(887, 912)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("resources/icon/chart--pencil.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(".\\views\\resources/icon/chart--pencil.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
@@ -76,10 +76,9 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.groupBox_OperationList.sizePolicy().hasHeightForWidth())
         self.groupBox_OperationList.setSizePolicy(sizePolicy)
         self.groupBox_OperationList.setMinimumSize(QtCore.QSize(0, 320))
-        self.groupBox_OperationList.setMaximumSize(QtCore.QSize(400, 16777215))
         self.groupBox_OperationList.setObjectName("groupBox_OperationList")
         self.gridLayout_5 = QtWidgets.QGridLayout(self.groupBox_OperationList)
-        self.gridLayout_5.setSizeConstraint(QtWidgets.QLayout.SetNoConstraint)
+        self.gridLayout_5.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
         self.gridLayout_5.setObjectName("gridLayout_5")
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
@@ -99,7 +98,7 @@ class Ui_MainWindow(object):
         self.pushButtonDeleteFromList.setSizePolicy(sizePolicy)
         self.pushButtonDeleteFromList.setMaximumSize(QtCore.QSize(16777215, 30))
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("resources/icon/eraser--minus.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap(".\\views\\resources/icon/eraser--minus.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButtonDeleteFromList.setIcon(icon1)
         self.pushButtonDeleteFromList.setObjectName("pushButtonDeleteFromList")
         self.verticalLayout.addWidget(self.pushButtonDeleteFromList)
@@ -144,7 +143,6 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.groupBox_Operation.sizePolicy().hasHeightForWidth())
         self.groupBox_Operation.setSizePolicy(sizePolicy)
-        self.groupBox_Operation.setMaximumSize(QtCore.QSize(300, 16777215))
         self.groupBox_Operation.setObjectName("groupBox_Operation")
         self.gridLayout_6 = QtWidgets.QGridLayout(self.groupBox_Operation)
         self.gridLayout_6.setObjectName("gridLayout_6")
@@ -193,7 +191,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.pushButtonNewOperation.sizePolicy().hasHeightForWidth())
         self.pushButtonNewOperation.setSizePolicy(sizePolicy)
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("resources/icon/eraser--plus.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap(".\\views\\resources/icon/eraser--plus.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButtonNewOperation.setIcon(icon2)
         self.pushButtonNewOperation.setObjectName("pushButtonNewOperation")
         self.gridLayout.addWidget(self.pushButtonNewOperation, 4, 1, 1, 1)
@@ -205,7 +203,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.pushButtonAdd.sizePolicy().hasHeightForWidth())
         self.pushButtonAdd.setSizePolicy(sizePolicy)
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("resources/icon/plus-button.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap(".\\views\\resources/icon/plus-button.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButtonAdd.setIcon(icon3)
         self.pushButtonAdd.setObjectName("pushButtonAdd")
         self.gridLayout.addWidget(self.pushButtonAdd, 3, 1, 1, 1)
@@ -213,7 +211,7 @@ class Ui_MainWindow(object):
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.groupBox_Operation)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 921, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 887, 22))
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(self.menubar)
         self.menuFile.setObjectName("menuFile")
@@ -225,17 +223,17 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
         self.actionOpen_File = QtWidgets.QAction(MainWindow)
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("resources/icon/document--pencil.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap(".\\views\\resources/icon/document--pencil.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.actionOpen_File.setIcon(icon4)
         self.actionOpen_File.setObjectName("actionOpen_File")
         self.actionOpen_Configuration = QtWidgets.QAction(MainWindow)
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("resources/icon/cutter--pencil.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon5.addPixmap(QtGui.QPixmap(".\\views\\resources/icon/cutter--pencil.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.actionOpen_Configuration.setIcon(icon5)
         self.actionOpen_Configuration.setObjectName("actionOpen_Configuration")
         self.actionSave_Parsed_File = QtWidgets.QAction(MainWindow)
         icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("resources/icon/disk.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon6.addPixmap(QtGui.QPixmap(".\\views\\resources/icon/disk.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.actionSave_Parsed_File.setIcon(icon6)
         self.actionSave_Parsed_File.setObjectName("actionSave_Parsed_File")
         self.actionSave_Configuration = QtWidgets.QAction(MainWindow)
@@ -282,13 +280,3 @@ class Ui_MainWindow(object):
         self.actionSave_Configuration.setText(_translate("MainWindow", "Save Configuration"))
         self.actionSave_Configuration.setShortcut(_translate("MainWindow", "Ctrl+S"))
         self.actionHelp_regex_test_app.setText(_translate("MainWindow", "Help regex test app"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
